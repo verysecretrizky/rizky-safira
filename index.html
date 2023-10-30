@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Maintenance</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #countdown {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        #message {
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Under Maintenance</h1>
+    <div id="countdown"></div>
+    <div id="message">We'll be back shortly!</div>
+
+    <script>
+        // Set the date and time when maintenance will end (YYYY, MM (0-11), DD, HH, MM, SS)
+        var maintenanceEnd = new Date(2023, 11, 23, 00, 0, 0);
+
+        // Function to update the countdown timer
+        function updateCountdown() {
+            var now = new Date();
+            var timeRemaining = maintenanceEnd - now;
+            var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (timeRemaining <= 0) {
+                document.getElementById("countdown").innerHTML = "Maintenance is over!";
+                document.getElementById("message").style.display = "none";
+            }
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+</body>
+</html>
