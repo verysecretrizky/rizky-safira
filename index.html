@@ -3181,5 +3181,15 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
         }
       }
     </style>
+    
+    <script>
+	var url = new URL(window.location.href);
+	var nama = url.searchParams.get("nama");
+
+	if (nama) {
+  		console.log("nama tamu:", nama);
+  		$("#nama-tamu").text(nama) 
+	}
+    </script>
   </body>
 </html>
