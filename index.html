@@ -2796,11 +2796,11 @@
                   <input type="text" id="name" name="name" class="form-control border border-primary" placeholder="Masukkan nama anda…" required="">
                   <span class="invalid-feedback"></span>
                 </div>
-                <div class="mb-5 form-group">
+                <!--<div class="mb-5 form-group">
                   <label class="form-label text-primary fs-2 section-ucapan-body">No. HP</label>
                   <input type="text" id="phone" name="phone" class="form-control border border-primary" placeholder="Masukkan no. HP anda…" required="">
                   <span class="invalid-feedback"></span>
-                </div>
+                </div>-->
                 <div class="mb-5 form-group" id="category" value="hadir">
                   <label for="" class="form-label text-primary fs-2 section-ucapan-body">Bersedia hadir di acara kami?</label>
                   <div class="form-check mb-2">
@@ -2836,30 +2836,7 @@
       <div class="container-fluid px-0">
         <div class="row">
           <div class="col-12 aos-init" data-aos="fade-up" data-aos-duration="600">
-            <div class="text-center mb-10 position-relative">
-              <h1 class="font-type-secondary text-primary section-hadiah-primary">Kirim Hadiah (dihapus)</h1>
-            </div>
-            <div class="tns-outer" id="tinyslider-container-bank-ow">
-              <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">5 to 8</span> of 2 </div>
-              <div id="tinyslider-container-bank-mw" class="tns-ovh">
-                <div class="tns-inner" id="tinyslider-container-bank-iw">
-                  <div id="tinyslider-container-bank" class="  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" style="transition-duration: 0s; transform: translate3d(-40%, 0px, 0px);">
-                    <div class="tinyslider-item tinyslider-item-bank ps-2 pb-3 pt-3 tns-item tns-transparent" aria-hidden="true" tabindex="-1">
-                      <div class="card justify-content-center align-self-center shadow p-5">
-                        <div class="row justify-content-between">
-                          <img src="assets/ovo.png" alt="" class="bank-logo">
-                        </div>
-                        <h3 class="fs-1 fw-bold mb-1 pb-1 section-hadiah-body">xxx</h3>
-                        <div class="fs-1 section-hadiah-body">xxxx</div>
-                        <a href="#" class="h4 text-info text-decoration-none mt-1 section-hadiah-body" onclick="copyRek('081292958080');return false;">
-                          <i class="fi fi-sr-copy-alt mr-2"></i>Salin no. rekening </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
           <div id="tinyslider-controls-bank" class="row justify-content-end" aria-label="Carousel Navigation" tabindex="0" style="display: none;">
             <div class="col-auto" aria-controls="tinyslider-container-bank" tabindex="-1" data-controls="prev">
               <img src="assets/tinyslider-prev.svg" class="csr-pointer" alt="">
@@ -3113,7 +3090,6 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
 
       function storeData() {
 		var name = document.getElementById('name').value;
-		var phone = document.getElementById('phone').value;
 		var category = document.getElementById('category').value = "hadir";
 		var greeting = document.getElementById('greeting').value;
         // Create a reference to the data to be stored
@@ -3121,7 +3097,6 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
         // Create an object with the data to be stored
         var data = {
 			name: name,
-			phone:phone,
 			category:category,
 			greeting:greeting
         };
@@ -3138,7 +3113,25 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
         const guestList = document.getElementById('guestList');
         const entry = document.createElement('div');
         entry.innerHTML = `
-						<strong>${guest.name}</strong> - ${guest.category}, ${guest.description}`;
+						<div id="wdp-comment-757" class="wdp-comment wdp-clearfix">
+        <div class="wdp-comment-avatar">
+            <img src="">
+        </div><!--.wdp-comment-avatar-->
+        <div class="wdp-comment-content">
+            <div class="wdp-comment-info">
+                <a class="wdp-commenter-name" title="Mikhailo Mudryk">${guest.name}</a>
+                <span class="wdp-post-author"><svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><!-- <i class="fas fa-check-circle"></i> Font Awesome fontawesome.com --> ${guest.category}</span>
+                <br>
+                <span class="wdp-comment-time">
+                <svg class="svg-inline--fa fa-clock fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg><!-- <i class="far fa-clock"></i> Font Awesome fontawesome.com -->
+          	1 bulan, 1 minggu lalu
+          </span>
+            </div><!--.wdp-comment-info-->
+            <div class="wdp-comment-text"><p>${guest.greeting}</p></div>
+            </div><!--.wdp-comment-actions-->            
+        </div><!--.wdp-comment-content-->
+
+    </div><hr>`;
         guestList.appendChild(entry);
       }
       // Listen for new entries in the guestbook and display them
