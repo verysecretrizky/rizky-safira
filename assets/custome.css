@@ -8,8 +8,30 @@ body {
 body#index {
   color: #ffffff!important;
 }
+.wdp-post-author {
+  font-size: .8em;
+  color: #fff;
+  background-color: #7b6945;
+  font-family: inherit;
+  padding: 2px 4px;
+  margin-left: 4px;
+  border-radius: 3px;
+}
 
+.wdp-commenter-name {
+  color: #7b6945 !important;
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none !important;
+  font-family: inherit;
+}
 
+.wdp-comment-time {
+  font-size: .8em;
+  color: #9da8b7;
+  font-family: inherit;
+  padding-left: 3px;
+}
 
 .font-type-secondary {
   font-weight: 400;
