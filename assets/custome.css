@@ -466,7 +466,7 @@ section.section-3 .decoration-right-water {
   z-index: -1;
 }
 section#acara {
-  background: url(/images/floral-4/bg/bg-acara.jpg) repeat;
+  background: url(/assets/bg-acara.jpg) repeat;
 }
 section#acara:before {
   background: #fff;
@@ -704,7 +704,7 @@ section#message-block {
   padding-top: 0;
 }
 section#ucapan {
-  background: url(/images/floral-4/bg/bg-ucapan.jpg) no-repeat;
+  background: url(/assets/bg-ucapan.jpg) no-repeat;
   background-size: cover;
   padding: 10rem 0 13rem !important;
 }
@@ -843,10 +843,10 @@ section#ucapan .cover-decoration-left {
   z-index: 4;
 }
 .decoration-ring {
-  background: url(/images/floral-4/decoration/ring1.png),
-    url(/images/floral-4/decoration/ring2.png),
-    url(/images/floral-4/decoration/ring3.png),
-    url(/images/floral-4/decoration/bg-polygon.png);
+  background: url(/assets/ring1.png),
+    url(/assets/ring2.png),
+    url(/assets/ring3.png),
+    url(/assets/bg-polygon.png);
   background-position: 50%, 50%, 50%, center 60%;
   background-repeat: no-repeat;
   background-size: auto;
