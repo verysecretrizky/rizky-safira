@@ -2801,12 +2801,12 @@
                   <input type="text" id="phone" name="phone" class="form-control border border-primary" placeholder="Masukkan no. HP anda…" required="">
                   <span class="invalid-feedback"></span>
                 </div>-->
-                <div class="mb-5 form-group" id="category" value="hadir">
+                <div class="mb-5 form-group">
                   <label for="" class="form-label text-primary fs-2 section-ucapan-body">Bersedia hadir di acara kami?</label>
                   <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" checked="checked" name="attendance" value="1" id="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" checked="checked" name="category" value="hadir" id="flexRadioDefault1">
                     <label class="form-check-label section-ucapan-body text-primary" for="flexRadioDefault1"> Ya </label>
-                    <input class="form-check-input ms-3" type="radio" name="attendance" value="0" id="flexRadioDefault2">
+                    <input class="form-check-input ms-3" type="radio" name="category" value="tidak hadir" id="flexRadioDefault2">
                     <label class="form-check-label section-ucapan-body text-primary" for="flexRadioDefault2"> Tidak </label>
                   </div>
                   <div class="form-check"></div>
@@ -3070,6 +3070,18 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
       });
     </script>
 	
+	<script>
+	function formatDate(date = new Date()) {
+	  const year = date.toLocaleString('default', {year: 'numeric'});
+	  const month = date.toLocaleString('default', {
+		month: '2-digit',
+	  });
+	  const day = date.toLocaleString('default', {day: '2-digit'});
+
+	  return [year, month, day].join('-');
+	}
+	</script>
+	
 	   <script>
       // Initialize Firebase
       var firebaseConfig = {
@@ -3090,14 +3102,16 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
 
       function storeData() {
 		var name = document.getElementById('name').value;
-		var category = document.getElementById('category').value = "hadir";
+		var category = document.querySelector('input[name="category"]:checked').value;;
 		var greeting = document.getElementById('greeting').value;
         // Create a reference to the data to be stored
         var dataRef = database.ref('guestbook');
+		var tanggal = formatDate(new Date());
         // Create an object with the data to be stored
         var data = {
 			name: name,
 			category:category,
+			tanggal:tanggal,
 			greeting:greeting
         };
         // Push the data to the database
@@ -3124,7 +3138,7 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
                 <br>
                 <span class="wdp-comment-time">
                 <svg class="svg-inline--fa fa-clock fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg><!-- <i class="far fa-clock"></i> Font Awesome fontawesome.com -->
-          	1 bulan, 1 minggu lalu
+          	${guest.tanggal}
           </span>
             </div><!--.wdp-comment-info-->
             <div class="wdp-comment-text"><p>${guest.greeting}</p></div>
