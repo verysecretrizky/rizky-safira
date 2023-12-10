@@ -845,8 +845,7 @@ section#ucapan .cover-decoration-left {
 .decoration-ring {
   background: url(/assets/ring1.png),
     url(/assets/ring2.png),
-    url(/assets/ring3.png),
-    url(/assets/bg-polygon.png);
+    url(/assets/ring3.png);
   background-position: 50%, 50%, 50%, center 60%;
   background-repeat: no-repeat;
   background-size: auto;
