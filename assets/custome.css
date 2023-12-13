@@ -5,6 +5,37 @@ body {
 	color: #fff;
 }
 
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 101; // This sets the z-index of the video container
+}
+
+
+iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#close-button {
+background-color: #68324a;
+  color: #eee;
+  position: absolute;
+  bottom: 10%;
+}
+
+
+	#close-button {
+	  left: 28%;
+	}
+	
 body#index {
   color: #ffffff!important;
 }
@@ -1770,6 +1801,7 @@ span#title-soundcloud {
   section#opening h1 br {
     display: none;
   }
+  
 }
 @media only screen and (min-width: 992px) {
   .decoration-parent img {
@@ -1787,6 +1819,8 @@ span#title-soundcloud {
     top: 12%;
     width: 197px !important;
   }
+  
+  
 }
 @media only screen and (min-width: 1200px) {
   .decoration-parent img {
@@ -1810,6 +1844,10 @@ span#title-soundcloud {
   #ucapan #row-item {
     width: 1134px;
   }
+  
+  	#close-button {
+	  left: 44%;
+	}
 }
 
 .black {
