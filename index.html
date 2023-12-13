@@ -2392,12 +2392,21 @@
     <style></style>
   </head>
   <body id="index" class="opening-hide" style="cursor: default !important; overflow-y: hidden !important; overflow-x: hidden !important;" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-    <button id="btn-play" class="btn btn-light">
+        <div id="video-container" class="video-container">
+        <iframe width="360" height="760" src="https://www.youtube.com/embed/eGi447l2_mM?&theme=dark&autohide=2&modestbranding=1&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+		<div class="col-auto">
+                <button id="close-button" class="btn btn-primary animate__animated animate__pulse animate__infinite section-header-body" style="opacity: 1;">Buka Undangan</button>
+            </div>
+    </div>
+	
+	
+	<!--<button id="btn-play" class="btn btn-light">
       <svg class="svg-inline--fa fa-pause fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pause" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
         <path fill="currentColor" d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"></path>
       </svg>
-      <!-- <i class="fas fa-pause"></i> Font Awesome fontawesome.com -->
-    </button>
+       <i class="fas fa-pause"></i> Font Awesome fontawesome.com
+    </button>-->
     <audio controls="controls" id="audio" class="d-none">
       <source src="assets/Wedding%204.mp3" type="audio/mpeg">
       <!-- Your browser does not support the audio element. -->
@@ -3172,6 +3181,21 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
   		console.log("nama tamu:", nama);
   		$("#nama-tamu").text(nama) 
 	}
+	
+	
+	const videoContainer = document.querySelector('.video-container');
+const closeButton = document.querySelector('#close-button');
+
+closeButton.addEventListener('click', () => {
+  videoContainer.parentNode.removeChild(videoContainer);
+});
+
+
+
+
+
+
+
     </script>
   </body>
 </html>
