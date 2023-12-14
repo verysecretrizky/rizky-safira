@@ -2401,16 +2401,14 @@
     </div>
 	
 	
-	<!--<button id="btn-play" class="btn btn-light">
-      <svg class="svg-inline--fa fa-pause fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pause" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-        <path fill="currentColor" d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"></path>
-      </svg>
-       <i class="fas fa-pause"></i> Font Awesome fontawesome.com
-    </button>-->
-    <audio controls="controls" id="audio" class="d-none">
-      <source src="assets/Wedding%204.mp3" type="audio/mpeg">
-      <!-- Your browser does not support the audio element. -->
-    </audio>
+	<button id="btn-play" class="btn btn-light">
+		Pause
+	</button>
+	<audio  id="audio" class="d-none" controls autoplay>
+		<source  src="assets/maher-zain.mp3"  type="audio/mpeg">
+		<!-- Your browser does not support the audio element. -->
+	</audio>
+
     <nav class="navbar navbar-expand fixed-bottom d-md-none border-top p-0 pb-3">
       <ul class="navbar-nav nav-justified w-100">
         <li class="nav-item">
@@ -3197,5 +3195,23 @@ closeButton.addEventListener('click', () => {
 
 
     </script>
+	
+	<script>
+    var audio = document.getElementById("audio");
+    var playPauseButton = document.getElementById("btn-play");
+
+	
+	playPauseButton.addEventListener('click', () => {
+		if (audio.paused) {
+            audio.play();
+            playPauseButton.textContent = "Pause";
+        } else {
+            audio.pause();
+            playPauseButton.textContent = "Play";
+        }
+	});
+
+    
+</script>
   </body>
 </html>
