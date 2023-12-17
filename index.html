@@ -3108,6 +3108,8 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
       var database = firebase.database();
 
       function storeData() {
+alert('Berhasil menambahkan ucapan'); 
+	      
 		var name = document.getElementById('name').value;
 		var category = document.querySelector('input[name="category"]:checked').value;;
 		var greeting = document.getElementById('greeting').value;
@@ -3129,7 +3131,7 @@ Waalaikumsalam warahmatullahi wabarakatu</p>
 		document.getElementById('category').value = '';
 		document.getElementById('greeting').value = '';
 
-	alert('Berhasil menambahkan ucapan'); 
+	
       }
       // Function to display guest entries
       function displayGuests(guest) {
